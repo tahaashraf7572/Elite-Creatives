@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Elite Creatives — Luxury Real Estate Media</title>
+<meta name="description" content="Elite Creatives crafts cinematic property films, HDR photography, drone cinematography, and immersive 3D tours for the world's most exclusive real estate listings." />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: { 900:'#1A1A1A', 700:'#2E2E2E', 500:'#5C5C5C', 300:'#9A9A9A', 100:'#D4D4D4' },
+          gold: { 300:'#E8D07A', 400:'#DBBF4A', 500:'#D4AF37', 600:'#B8941E' },
+          parchment: { 100:'#FAF9F6', 200:'#F3F1EC', 300:'#E8E5DE' },
+          mute: { 300:'#9A9A9A', 400:'#6E6E6E', 500:'#5C5C5C' },
+        },
+        fontFamily: {
+          display: ['"Playfair Display"', 'serif'],
+          body: ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-parchment-100 text-ink-700 font-body antialiased">
+
+<!-- ============ PRELOADER ============ -->
+<div id="preloader" class="preloader">
+  <div class="preloader-inner">
+    <span class="preloader-mark">EC</span>
+    <div class="preloader-line"><span></span></div>
+  </div>
+</div>
+
+<!-- ============ CUSTOM CURSOR DOT (desktop) ============ -->
+<div id="cursorDot" class="cursor-dot hidden lg:block"></div>
+<div id="cursorRing" class="cursor-ring hidden lg:block"></div>
+
+<!-- ============ NAVBAR ============ -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-3 group">
+      <span class="font-display text-2xl tracking-wide text-ink-900">Elite <span class="text-gold-400 italic">Creatives</span></span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-10 text-[12px] font-medium uppercase tracking-[0.18em] text-ink-500">
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#portfolio" class="nav-link">Portfolio</a>
+      <a href="#why" class="nav-link">Why Us</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <button id="themeToggle" class="w-9 h-9 rounded border border-ink-100 flex items-center justify-center text-ink-500 hover:border-gold-500 hover:text-gold-500 transition" title="Toggle theme">
+        <i class="fa-solid fa-moon text-xs"></i>
+      </button>
+      <a href="#booking" class="hidden sm:inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] px-5 py-2.5 rounded border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-white transition-all duration-300">
+        Book a Shoot
+      </a>
+      <button id="mobileMenuBtn" class="lg:hidden text-ink-700 text-xl"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="home" class="relative min-h-screen flex items-end overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1920&auto=format&fit=crop">
+      <source src="https://assets.mixkit.co/videos/43607/43607-360.mp4" type="video/mp4">
+    </video>
+    <img id="heroFallback" class="hero-video hero-fallback hidden" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1920&auto=format&fit=crop" alt="Luxury estate" onerror="this.src='https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=1920&auto=format&fit=crop'" />
+    <div class="hero-overlay"></div>
+    <div class="hero-vignette"></div>
+  </div>
+
+  <div class="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-10 pb-24 lg:pb-28 pt-40">
+    <p data-animate class="eyebrow text-gold-300 mb-6" style="--reveal-delay:0.7s">Luxury Real Estate Media Agency</p>
+    <h1 data-animate class="font-display text-[2.6rem] sm:text-6xl lg:text-[5.2rem] leading-[1.04] font-medium text-ivory-100 max-w-5xl" style="--reveal-delay:0.85s">
+      Luxury Property Media<br/>That Sells <em class="italic text-gold-300">More</em> Than Homes
+      <span class="hero-rule"></span>
+    </h1>
+    <p data-animate class="mt-7 text-ivory-200/75 text-base sm:text-lg max-w-xl leading-relaxed font-light" style="--reveal-delay:1.05s">
+      Award-winning photography, cinematic films, drone experiences, and immersive marketing for elite real estate professionals.
+    </p>
+
+    <div data-animate class="mt-10 flex flex-wrap items-center gap-5" style="--reveal-delay:1.2s">
+      <a href="#booking" class="btn-gold">Book a Shoot</a>
+      <a href="#portfolio" class="btn-ghost">
+        <i class="fa-solid fa-play text-[10px] mr-2"></i> View Portfolio
+      </a>
+    </div>
+  </div>
+
+  <a href="#stats" class="scroll-cue hidden sm:flex">
+    <span>Scroll</span>
+    <div class="scroll-cue-line"></div>
+  </a>
+</section>
+
+<!-- ============ STATS ============ -->
+<section id="stats" class="relative">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-16 grid grid-cols-2 lg:grid-cols-4 gap-y-12">
+    <div data-animate class="stat-block" style="--reveal-delay:0s">
+      <p class="stat-number"><span data-counter="1" data-suffix="B+" data-prefix="$">$0</span></p>
+      <p class="stat-label">Properties Captured</p>
+    </div>
+    <div data-animate class="stat-block" style="--reveal-delay:0.1s">
+      <p class="stat-number"><span data-counter="10000" data-suffix="+">0</span></p>
+      <p class="stat-label">Projects Delivered</p>
+    </div>
+    <div data-animate class="stat-block" style="--reveal-delay:0.2s">
+      <p class="stat-number"><span data-counter="500" data-suffix="+">0</span></p>
+      <p class="stat-label">Elite Agents Served</p>
+    </div>
+    <div data-animate class="stat-block" style="--reveal-delay:0.3s">
+      <p class="stat-number stars-number">5.0 <i class="fa-solid fa-star text-gold-400 text-base ml-1"></i></p>
+      <p class="stat-label">Client Rating</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="relative py-28 lg:py-36 px-6 lg:px-10">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16" data-animate>
+      <div>
+        <p class="eyebrow text-gold-400 mb-4">Capabilities</p>
+        <h2 class="font-display text-4xl sm:text-5xl font-medium text-ink-900 max-w-xl">The Full Spectrum<br/>of Property Media</h2>
+      </div>
+      <p class="text-ink-500 max-w-sm font-light leading-relaxed">Every discipline an elite listing requires — captured, edited, and delivered under one studio, one standard.</p>
+    </div>
+
+    <div id="servicesList" class="service-list"></div>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO ============ -->
+<section id="portfolio" class="relative py-28 lg:py-36 px-6 lg:px-10">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14" data-animate>
+      <div>
+        <p class="eyebrow text-gold-400 mb-4">Featured Work</p>
+        <h2 class="font-display text-4xl sm:text-5xl font-medium text-ink-900">Selected Portfolio</h2>
+      </div>
+      <div class="flex flex-wrap gap-3" id="portfolioFilters">
+        <button data-filter="all" class="pf-tab active-pf">All</button>
+        <button data-filter="photo" class="pf-tab">Photography</button>
+        <button data-filter="video" class="pf-tab">Films</button>
+        <button data-filter="drone" class="pf-tab">Drone</button>
+        <button data-filter="3d" class="pf-tab">3D Tours</button>
+      </div>
+    </div>
+
+    <div id="masonryGrid" class="masonry-grid"></div>
+
+    <!-- Before / After -->
+    <div class="mt-24" data-animate>
+      <p class="eyebrow text-gold-400 mb-4">Virtual Staging</p>
+      <h3 class="font-display text-3xl text-ink-900 mb-8">Before &amp; After</h3>
+      <div class="ba-slider" id="baSlider">
+        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=1400&auto=format&fit=crop" class="ba-img-before" alt="Before staging" onerror="this.src='https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1400&auto=format&fit=crop'" />
+        <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1400&auto=format&fit=crop" class="ba-img-after" alt="After staging" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1400&auto=format&fit=crop'" />
+        <div class="ba-divider" id="baDivider">
+          <div class="ba-handle"><i class="fa-solid fa-arrows-left-right"></i></div>
+        </div>
+        <span class="ba-tag ba-tag-left">Before</span>
+        <span class="ba-tag ba-tag-right">After</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section id="why" class="relative py-28 lg:py-36 px-6 lg:px-10">
+  <div class="max-w-[1400px] mx-auto grid lg:grid-cols-[0.8fr_1.2fr] gap-16 items-start">
+    <div data-animate>
+      <p class="eyebrow text-gold-400 mb-4">The Standard</p>
+      <h2 class="font-display text-4xl sm:text-5xl font-medium text-ink-900 leading-tight">Why The Industry's<br/>Top Agents Choose Us</h2>
+      <p class="text-ink-500 mt-6 font-light leading-relaxed max-w-md">Six commitments that separate a listing that gets noticed from one that gets sold.</p>
+      <div class="why-image-frame">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=900&auto=format&fit=crop" alt="Luxury interior detail" onerror="this.src='https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=900&auto=format&fit=crop'" />
+      </div>
+    </div>
+    <div id="whyList" class="why-list"></div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="testimonials" class="relative py-28 lg:py-36 px-6 lg:px-10 overflow-hidden">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="text-center mb-16" data-animate>
+      <p class="eyebrow text-gold-400 mb-4">Client Success</p>
+      <h2 class="font-display text-4xl sm:text-5xl font-medium text-ink-900">Trusted By Elite Agencies</h2>
+    </div>
+    <div id="testimonialTrack" class="testimonial-track"></div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing" class="relative py-28 lg:py-36 px-6 lg:px-10">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="text-center mb-16" data-animate>
+      <p class="eyebrow text-gold-400 mb-4">Investment</p>
+      <h2 class="font-display text-4xl sm:text-5xl font-medium text-ink-900">Packages For Every Portfolio</h2>
+    </div>
+    <div id="pricingGrid" class="pricing-grid"></div>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section id="booking" class="relative py-28 lg:py-36 px-6 lg:px-10">
+  <div class="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16">
+    <div data-animate>
+      <p class="eyebrow text-gold-400 mb-4">Reserve Your Date</p>
+      <h2 class="font-display text-4xl sm:text-5xl font-medium text-ink-900 leading-tight mb-6">Book Your<br/>Production Day</h2>
+      <p class="text-ink-500 font-light leading-relaxed max-w-md mb-10">Select a package, choose your preferred date, and our team will confirm your shoot within 24 hours.</p>
+
+      <div class="quote-calc">
+        <p class="eyebrow mb-4">Instant Quote Calculator</p>
+        <div class="space-y-5">
+          <div>
+            <label class="quote-label">Package</label>
+            <select id="quotePackage" class="quote-select">
+              <option value="1200">Essential — $1,200</option>
+              <option value="2400">Professional — $2,400</option>
+              <option value="4500">Luxury — $4,500</option>
+              <option value="8500">Elite — $8,500</option>
+            </select>
+          </div>
+          <div>
+            <label class="quote-label">Add-Ons</label>
+            <div class="grid grid-cols-2 gap-3">
+              <label class="quote-check"><input type="checkbox" value="600" class="quote-addon" /> Drone Cinematography <span>+$600</span></label>
+              <label class="quote-check"><input type="checkbox" value="450" class="quote-addon" /> Matterport 3D Tour <span>+$450</span></label>
+              <label class="quote-check"><input type="checkbox" value="350" class="quote-addon" /> Virtual Staging <span>+$350</span></label>
+              <label class="quote-check"><input type="checkbox" value="300" class="quote-addon" /> Social Reels <span>+$300</span></label>
+            </div>
+          </div>
+          <div class="quote-total">
+            <span>Estimated Total</span>
+            <span id="quoteTotal">$1,200</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div data-animate class="booking-card">
+      <div class="flex items-center justify-between mb-6">
+        <button id="calPrev" class="cal-nav"><i class="fa-solid fa-chevron-left"></i></button>
+        <p id="calMonthLabel" class="font-display text-lg text-ink-900"></p>
+        <button id="calNext" class="cal-nav"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+      <div class="cal-weekdays">
+        <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+      </div>
+      <div id="calGrid" class="cal-grid"></div>
+
+      <div id="bookingFormWrap" class="mt-8 hidden">
+        <p class="text-sm text-ink-500 mb-4">Selected date: <span id="selectedDateLabel" class="text-gold-500 font-medium"></span></p>
+        <form id="bookingForm" class="space-y-3">
+          <input required type="text" id="bookName" placeholder="Full Name" class="booking-input" />
+          <input required type="email" id="bookEmail" placeholder="Email Address" class="booking-input" />
+          <input required type="tel" id="bookPhone" placeholder="Phone Number" class="booking-input" />
+          <input type="text" id="bookAddress" placeholder="Property Address (optional)" class="booking-input" />
+          <button type="submit" class="btn-gold w-full justify-center">
+            <i class="fa-solid fa-lock text-[10px] mr-2"></i> Confirm &amp; Pay Deposit
+          </button>
+          <p class="text-[11px] text-ink-300 text-center">Secure deposit checkout — demo flow, no real payment is processed.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AGENT GROWTH ============ -->
+<section id="growth" class="relative py-28 lg:py-36 px-6 lg:px-10">
+  <div class="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div data-animate>
+      <p class="eyebrow text-gold-400 mb-4">For Agents</p>
+      <h2 class="font-display text-4xl sm:text-5xl font-medium text-ink-900 leading-tight mb-6">Media That<br/>Moves Listings</h2>
+      <p class="text-ink-500 font-light leading-relaxed max-w-md mb-10">Listings with professional cinematic media sell faster, attract more qualified buyers, and command stronger offers.</p>
+      <div class="growth-tips" id="growthTips"></div>
+    </div>
+    <div data-animate class="growth-chart-card">
+      <p class="eyebrow mb-6">Listing Performance Lift</p>
+      <div id="growthChart" class="growth-chart"></div>
+      <div class="growth-chart-legend">
+        <span><i></i> Standard Listing</span>
+        <span><i class="gold"></i> Elite Creatives Media</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="contact" class="relative pt-20 pb-8 px-6 lg:px-10">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="grid lg:grid-cols-[1.4fr_0.8fr_0.8fr_1fr] gap-12 pb-16 border-b border-black/5">
+      <div>
+        <span class="font-display text-2xl text-ink-900">Elite <span class="text-gold-400 italic">Creatives</span></span>
+        <p class="text-ink-300 font-light mt-5 max-w-sm leading-relaxed">Luxury real estate media for the world's most exclusive listings — photography, film, drone, and immersive 3D, delivered with cinematic precision.</p>
+        <div class="flex items-center gap-3 mt-7">
+          <a href="#" class="social-circle"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-circle"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social-circle"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="social-circle"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Studio</p>
+        <a href="#services" class="footer-link">Services</a>
+        <a href="#portfolio" class="footer-link">Portfolio</a>
+        <a href="#pricing" class="footer-link">Pricing</a>
+        <a href="#why" class="footer-link">Why Us</a>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <a href="mailto:hello@elitecreatives.studio" class="footer-link">hello@elitecreatives.studio</a>
+        <a href="tel:+18005550101" class="footer-link">+1 (800) 555‑0101</a>
+        <p class="footer-link" style="cursor:default;">Beverly Hills · New York · Dubai</p>
+      </div>
+      <div>
+        <p class="footer-heading">Newsletter</p>
+        <p class="text-ink-300 text-sm font-light mb-4">Market insights &amp; new portfolio drops, monthly.</p>
+        <form id="newsletterForm" class="newsletter-form">
+          <input required type="email" placeholder="Your email" class="newsletter-input" />
+          <button type="submit" class="newsletter-btn"><i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 text-xs text-ink-300">
+      <p>&copy; 2026 Elite Creatives. All rights reserved.</p>
+      <p>Crafted for those who don't list — they unveil.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING ACTIONS ============ -->
+<a href="https://wa.me/18005550101" target="_blank" class="floating-whatsapp" title="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+<a href="#booking" class="floating-booking">
+  <i class="fa-solid fa-calendar-check"></i> <span>Book a Shoot</span>
+</a>
+
+<!-- ============ AI CHATBOT ============ -->
+<div id="chatWidget" class="chat-widget">
+  <div class="chat-window hidden" id="chatWindow">
+    <div class="chat-header">
+      <div class="flex items-center gap-2.5">
+        <div class="chat-avatar"><i class="fa-solid fa-gem"></i></div>
+        <div>
+          <p class="text-sm font-semibold text-ink-900">Elite Concierge</p>
+          <p class="text-[11px] text-gold-500">Online now</p>
+        </div>
+      </div>
+      <button id="closeChatBtn" class="text-ink-300 hover:text-ink-900"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div id="chatMessages" class="chat-messages"></div>
+    <div class="chat-quick-replies" id="chatQuickReplies"></div>
+    <form id="chatForm" class="chat-input-row">
+      <input id="chatInput" type="text" placeholder="Ask about pricing, packages, or booking..." autocomplete="off" />
+      <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+  </div>
+  <button id="chatToggleBtn" class="chat-toggle-btn">
+    <i class="fa-solid fa-gem"></i>
+  </button>
+</div>
+
+<!-- ============ TOAST ============ -->
+<div id="toast" class="toast">
+  <i class="fa-solid fa-circle-check text-gold-400"></i>
+  <span id="toastMsg">Success</span>
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
